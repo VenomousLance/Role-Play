@@ -1,0 +1,12 @@
+C:\Users\rryke\code\Role-Play\Role-Play\bin\Debug\net5.0\Role-Play.deps.json
+C:\Users\rryke\code\Role-Play\Role-Play\bin\Debug\net5.0\Role-Play.dll
+C:\Users\rryke\code\Role-Play\Role-Play\bin\Debug\net5.0\ref\Role-Play.dll
+C:\Users\rryke\code\Role-Play\Role-Play\bin\Debug\net5.0\Role-Play.pdb
+C:\Users\rryke\code\Role-Play\Role-Play\obj\Debug\net5.0\Role-Play.csproj.AssemblyReference.cache
+C:\Users\rryke\code\Role-Play\Role-Play\obj\Debug\net5.0\Role-Play.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rryke\code\Role-Play\Role-Play\obj\Debug\net5.0\Role-Play.AssemblyInfoInputs.cache
+C:\Users\rryke\code\Role-Play\Role-Play\obj\Debug\net5.0\Role-Play.AssemblyInfo.cs
+C:\Users\rryke\code\Role-Play\Role-Play\obj\Debug\net5.0\Role-Play.csproj.CoreCompileInputs.cache
+C:\Users\rryke\code\Role-Play\Role-Play\obj\Debug\net5.0\Role-Play.dll
+C:\Users\rryke\code\Role-Play\Role-Play\obj\Debug\net5.0\ref\Role-Play.dll
+C:\Users\rryke\code\Role-Play\Role-Play\obj\Debug\net5.0\Role-Play.pdb
