@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 //Displays and creates
 
 namespace Role_Play.Main
@@ -14,6 +15,8 @@ namespace Role_Play.Main
             Console.WriteLine("Enter '2' to view and load the stats of your saved characters.");
             Console.WriteLine("Enter '3' to simulate rolling dice.");
             Console.ReadLine();
+
+            new Class1.Dice.D4Set();
         }
     }
 }
