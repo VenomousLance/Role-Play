@@ -1,4 +1,5 @@
 ﻿using System;
+using Dice.D4Set;
 
 
 //Displays and creates
@@ -17,6 +18,8 @@ namespace Role_Play.Main
             Console.ReadLine();
 
             new Class1.Dice.D4Set();
+            
+            Console.WriteLine("Hi");
         }
     }
 }
