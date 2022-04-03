@@ -1,16 +1,19 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
 
 //Logic
 
 //Next step: Dice
-//
+//Make a method that will return an instance of a D4-Set
 
 namespace Role_Play
 {
     //For rolling Dice
     public class Class1
     {
-        static int ValidateInt(string prompt, int min = 0, int max = int.MaxValue)
+        static int ValidateInt(string prompt, int min, int max)
         {
             while (true)
             {
@@ -33,91 +36,101 @@ namespace Role_Play
                 }
             }
         }
+
+        public class Character
+        {
+            public bool Save(string file)
+            {
+                try
+                {
+                    TextWriter saveTo = new StreamWriter(file);
+
+                    saveTo.WriteLine("Character name here");
+                    saveTo.WriteLine("Character class here");
+                    saveTo.WriteLine("Character race here");
+                    saveTo.Close();
+                }
+                catch
+                {
+                    return false;
+                }
+                return true;
+            }
+
+            public bool Load(string file)
+            {
+                try
+                {
+                    TextReader readFrom = new StreamReader(file);
+                    string line = "";
+                    var reader = new ArrayList();
+                    int counter = 0;
+
+                    while ((line = readFrom.ReadLine()) != null)
+                    {
+                        reader.Add(line);
+                        counter++;
+                    }
+
+                    foreach (var i in reader)
+                    {
+                        Console.WriteLine(i);
+                    }
+                }
+                catch
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
+
         public class Dice
         {
             public interface IDice
             {
-                int numSides();
-                void numRolls();
+                public List<int> Sides { get; }
+                public void diceValues();
             }
 
-            public class D4 : IDice
+            public interface ISetCreator
             {
-                public int numSides()
-                {
-                    return 4;
-                }
-                public void numRolls()
-                {
-                    //Will roll these dice as many times as dictated by the user from the main project
-                    //Code pending
-                }
+                public string SetType { get; }
+                public IDice SetCreate();
             }
 
-            public class D6 : IDice
+            public class D4Set : IDice
             {
-                public int numSides()
-                {
-                    return 6;
-                }
-                public void numRolls()
-                {
-                    //Will roll these dice as many times as dictated by the user from the main project
-                    //Code pending
-                }
-            }
+                public List<int> Sides => new List<int>();
+                public int numDice;
 
-            public class D8 : IDice
-            {
-                public int numSides()
+                public void diceValues()
                 {
-                    return 8;
+                    Sides.Add(1);
+                    Sides.Add(2);
+                    Sides.Add(3);
+                    Sides.Add(4);
+
+                    numDice = ValidateInt("How many d4 would you like to roll?", 0, 1000);
+                    int total = 0;
+                    var random = new Random();
+                    int roll = random.Next(Sides.Count);
+                    Console.WriteLine(Sides[roll]);
+
+                    /*while (numDice >= 0)
+                    {
+
+                    }*/
                 }
-                public void numRolls()
+
+                public D4Set(List<int> sides, int numdice)
                 {
-                    //Will roll these dice as many times as dictated by the user from the main project
-                    //Code pending
+                    sides = Sides;
+                    numdice = numDice;
                 }
             }
 
-            public class D10 : IDice
-            {
-                public int numSides()
-                {
-                    return 10;
-                }
-                public void numRolls()
-                {
-                    //Will roll these dice as many times as dictated by the user from the main project
-                    //Code pending
-                }
-            }
-
-            public class D12 : IDice
-            {
-                public int numSides()
-                {
-                    return 12;
-                }
-                public void numRolls()
-                {
-                    //Will roll these dice as many times as dictated by the user from the main project
-                    //Code pending
-                }
-            }
-
-            public class D20 : IDice
-            {
-                public int numSides()
-                {
-                    return 20;
-                }
-                public void numRolls()
-                {
-                    //Will roll these dice as many times as dictated by the user from the main project
-                    //Code pending
-                }
-            }
+            //6,8,10,12,20
         }
     }
 }
