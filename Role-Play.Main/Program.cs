@@ -1,5 +1,6 @@
 ﻿using System;
-using Dice.D4Set;
+using System.Collections.Generic;
+
 
 
 //Displays and creates
@@ -17,7 +18,16 @@ namespace Role_Play.Main
             Console.WriteLine("Enter '3' to simulate rolling dice.");
             Console.ReadLine();
 
-            new Class1.Dice.D4Set();
+            List<int> Sides = new List<int>();
+            Sides.Add(1);
+            Sides.Add(2);
+            Sides.Add(3);
+            Sides.Add(4);
+
+
+
+            new Class1.Dice.D4Set(4);
+            
             
             Console.WriteLine("Hi");
         }

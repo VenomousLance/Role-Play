@@ -91,25 +91,28 @@ namespace Role_Play
             {
                 public List<int> Sides { get; }
                 public void diceValues();
+                public IDice SetCreate();
             }
 
+/*
             public interface ISetCreator
             {
                 public string SetType { get; }
                 public IDice SetCreate();
             }
+*/
 
             public class D4Set : IDice
             {
                 public List<int> Sides => new List<int>();
-                public int numDice;
+                public int numDice {get; set;}
+                public D4Set(int numdice)
+                {
+                    numDice = numdice;
+                }
 
                 public void diceValues()
                 {
-                    Sides.Add(1);
-                    Sides.Add(2);
-                    Sides.Add(3);
-                    Sides.Add(4);
 
                     numDice = ValidateInt("How many d4 would you like to roll?", 0, 1000);
                     int total = 0;
@@ -117,16 +120,22 @@ namespace Role_Play
                     int roll = random.Next(Sides.Count);
                     Console.WriteLine(Sides[roll]);
 
-                    /*while (numDice >= 0)
+                    /*while (numDice > 0)
                     {
 
                     }*/
                 }
 
-                public D4Set(List<int> sides, int numdice)
+
+                public IDice SetCreate()
                 {
-                    sides = Sides;
-                    numdice = numDice;
+                    numDice = ValidateInt("How many 4-sided dice would you like to roll?", 0, int.MaxValue);
+                    Sides.Add(1);
+                    Sides.Add(2);
+                    Sides.Add(3);
+                    Sides.Add(4);
+                    return new D4Set(numDice);
+                    Console.WriteLine($"{numDice}");
                 }
             }
 
