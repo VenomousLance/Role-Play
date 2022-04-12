@@ -24,9 +24,20 @@ namespace Role_Play.Main
             Sides.Add(3);
             Sides.Add(4);
 
+            /*
+            int number = 15;
 
+            while (number > 0)
+            {
+            var random = new Random();
+            int roll = random.Next(Sides.Count);
+            int rollValue = Sides[roll];
+            Console.WriteLine(rollValue);
+            number--;
+            }
+            */
 
-            new Class1.Dice.D4Set(4);
+            new Class1.Dice.D4Set();
             
             
             Console.WriteLine("Hi");
