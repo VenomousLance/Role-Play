@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 
 
-
 //Displays and creates
 
 namespace Role_Play.Main
@@ -11,39 +10,51 @@ namespace Role_Play.Main
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the Role-Playing Assistant! With this program you can create a character, save them to the program, and load them for later use! You can also use this program to roll dice!");
-            Console.WriteLine("Enter the following based on what you want to do:");
-            Console.WriteLine("Enter '1' to create a character.");
-            Console.WriteLine("Enter '2' to view and load the stats of your saved characters.");
-            Console.WriteLine("Enter '3' to simulate rolling dice.");
-            Console.ReadLine();
-
-            List<int> Sides = new List<int>();
-            Sides.Add(1);
-            Sides.Add(2);
-            Sides.Add(3);
-            Sides.Add(4);
-
-            /*
-            int number = 15;
-
-            while (number > 0)
+            bool runProgram = true;
+            while (runProgram == true)
             {
-            var random = new Random();
-            int roll = random.Next(Sides.Count);
-            int rollValue = Sides[roll];
-            Console.WriteLine(rollValue);
-            number--;
-            }
-            */
+                Console.WriteLine("\nWelcome to the Role-Playing Assistant! With this program you can create a character, save them to the program, and load them for later use! You can also use this program to roll dice!");
+                Console.WriteLine("Enter the following based on what you want to do:");
+                Console.WriteLine("Enter '1' to create a character.");
+                Console.WriteLine("Enter '2' to view and load the stats of your saved characters.");
+                Console.WriteLine("Enter '3' to simulate rolling dice.");
+                Console.WriteLine("Enter '4' to exit the program.");
+                var input = Class1.ValidateInt("\nWhat will you do?", 1, 4);
 
-            //new Class1.Dice.D4Set();
-            //new Class1.Dice.D6Set();
-            //new Class1.Dice.D8Set();
-            //new Class1.Dice.D12Set();
-            //new Class1.Dice.D20Set();
-            new Class1.Dice.RollAll();
-            
+                if (input == 1)
+                { 
+
+                }
+
+                else if (input == 2)
+                {
+
+                }
+
+                else if (input == 3)
+                {
+                    bool keepRolling = true;
+                    while (keepRolling == true)
+                    {
+                        Console.WriteLine("\nHere you will be asked how many dice of various side-values you would like to roll. When prompted, just input the amount of each respective die-type and the program will tell you what your total is!");
+                        new Class1.Dice.RollAll();
+                        var confirmRoll = Class1.ValidateInt("\nWould you like to keep rolling? Input 1 to continue, 2 to exit.", 1, 2);
+                        if (confirmRoll == 1)
+                        {
+                            keepRolling = true;
+                        }
+                        else
+                        {
+                            keepRolling = false;
+                        }
+                    }
+                }
+
+                else if (input == 4)
+                {
+                    runProgram = false;
+                }
+            }
         }
     }
 }
