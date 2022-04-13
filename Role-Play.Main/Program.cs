@@ -37,10 +37,13 @@ namespace Role_Play.Main
             }
             */
 
-            new Class1.Dice.D4Set();
+            //new Class1.Dice.D4Set();
+            //new Class1.Dice.D6Set();
+            //new Class1.Dice.D8Set();
+            //new Class1.Dice.D12Set();
+            //new Class1.Dice.D20Set();
+            new Class1.Dice.RollAll();
             
-            
-            Console.WriteLine("Hi");
         }
     }
 }
