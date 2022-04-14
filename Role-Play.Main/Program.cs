@@ -23,7 +23,7 @@ namespace Role_Play.Main
 
                 if (input == 1)
                 { 
-
+                    new Class1.Character();
                 }
 
                 else if (input == 2)
