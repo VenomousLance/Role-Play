@@ -1,0 +1,22 @@
+Your name: me
+Your character's name: joey
+Race: me
+Background: hobo
+Alignment: good
+Strength modifier: 4
+Dexterity modifier: 3
+Constitution modifier: 4
+Intelligence modifier: 3
+Wisdom modifier: 4
+Charisma modifier: 3
+Proficiency bonus: 4
+Saving throw (strength): 3
+Saving throw (dexterity): 4
+Saving throw (constitution): 3
+Saving throw (intelligence): 4
+Saving throw (wisdom): 3
+Saving throw (charisma): 4
+Armor class: 3
+Initiative: 4
+Speed: 3
+Max HP: 4
