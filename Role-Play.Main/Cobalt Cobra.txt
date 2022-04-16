@@ -1,0 +1,22 @@
+Your name: Me
+Your character's name: Cobalt Cobra
+Race: Me
+Background: Monk
+Alignment: Good
+Strength modifier: 9
+Dexterity modifier: 8
+Constitution modifier: 7
+Intelligence modifier: 6
+Wisdom modifier: 5
+Charisma modifier: 4
+Proficiency bonus: 3
+Saving throw (strength): 2
+Saving throw (dexterity): 1
+Saving throw (constitution): 9
+Saving throw (intelligence): 8
+Saving throw (wisdom): 7
+Saving throw (charisma): 6
+Armor class: 5
+Initiative: 4
+Speed: 3
+Max HP: 2
