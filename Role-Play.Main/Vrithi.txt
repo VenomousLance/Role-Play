@@ -1,0 +1,22 @@
+Your name: Me
+Your character's name: Vrithi
+Race: Me
+Background: Robot
+Alignment: Good
+Strength modifier: 1
+Dexterity modifier: 2
+Constitution modifier: 3
+Intelligence modifier: 4
+Wisdom modifier: 5
+Charisma modifier: 6
+Proficiency bonus: 7
+Saving throw (strength): 8
+Saving throw (dexterity): 9
+Saving throw (constitution): 1
+Saving throw (intelligence): 2
+Saving throw (wisdom): 3
+Saving throw (charisma): 4
+Armor class: 5
+Initiative: 6
+Speed: 7
+Max HP: 8

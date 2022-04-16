@@ -1,0 +1,22 @@
+Your name: Me
+Your character's name: Delta
+Race: Me
+Background: Knigth
+Alignment: Neutral
+Strength modifier: 99
+Dexterity modifier: 88
+Constitution modifier: 77
+Intelligence modifier: 66
+Wisdom modifier: 55
+Charisma modifier: 44
+Proficiency bonus: 33
+Saving throw (strength): 22
+Saving throw (dexterity): 11
+Saving throw (constitution): 99
+Saving throw (intelligence): 88
+Saving throw (wisdom): 77
+Saving throw (charisma): 66
+Armor class: 55
+Initiative: 44
+Speed: 33
+Max HP: 22

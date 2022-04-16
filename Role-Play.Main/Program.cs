@@ -22,13 +22,29 @@ namespace Role_Play.Main
                 var input = Class1.ValidateInt("\nWhat will you do?", 1, 4);
 
                 if (input == 1)
-                { 
+                {
+                    Console.WriteLine("\nType your response to each question below, make sure you input your answer correctly before submitting.");
                     new Class1.Character();
+                    Console.WriteLine("Done! Feel free to select the loading option to view the stats of your character.");
                 }
 
                 else if (input == 2)
                 {
-
+                    bool stayHere = true;
+                    while (stayHere == true)
+                    {
+                        Console.WriteLine("\nBelow is a list of the characters that are saved to the system.");
+                        Class1.Character.Load();
+                        int confirm = Class1.ValidateInt("\nWould you like to see any other characters? (Enter 1 to view other characters, 2 to exit to the main menu)", 1, 2);
+                        if (confirm == 1)
+                        {
+                            stayHere = true;
+                        }
+                        else
+                        {
+                            stayHere = false;
+                        }
+                    }
                 }
 
                 else if (input == 3)
