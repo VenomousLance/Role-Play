@@ -21,9 +21,9 @@ namespace Role_Play.Tests
         public void TestDice4()
         {
 
-            Class1.Dice.D4Set D4Test = new Class1.Dice.D4Set(5);
+            Logic.Dice.D4Set D4Test = new Logic.Dice.D4Set();
 
-            Assert.AreEqual(5, D4Test.numDice);
+            Assert.AreEqual(4, D4Test.Sides.Count);
         }
     }
 }

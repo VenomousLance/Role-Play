@@ -1,0 +1,22 @@
+Your name: Me
+Your character's name: Bob
+Race: Me
+Background: Mage
+Alignment: Chaotic Neutral
+Strength modifier: 9
+Dexterity modifier: 5
+Constitution modifier: 6
+Intelligence modifier: 3
+Wisdom modifier: 56
+Charisma modifier: 7
+Proficiency bonus: 5
+Saving throw (strength): 3
+Saving throw (dexterity): 6
+Saving throw (constitution): 4
+Saving throw (intelligence): 6
+Saving throw (wisdom): 7
+Saving throw (charisma): 4
+Armor class: 5
+Initiative: 6
+Speed: 4
+Max HP: 6

@@ -19,13 +19,13 @@ namespace Role_Play.Main
                 Console.WriteLine("Enter '2' to view and load the stats of your saved characters.");
                 Console.WriteLine("Enter '3' to simulate rolling dice.");
                 Console.WriteLine("Enter '4' to exit the program.");
-                var input = Class1.ValidateInt("\nWhat will you do?", 1, 4);
+                var input = Logic.ValidateInt("\nWhat will you do?", 1, 4);
 
                 if (input == 1)
                 {
                     Console.WriteLine("\nType your response to each question below, make sure you input your answer correctly before submitting.");
-                    new Class1.Character();
-                    Console.WriteLine("Done! Feel free to select the loading option to view the stats of your character.");
+                    new Logic.Character();
+                    Console.WriteLine("Done! Feel free to select the loading option from the main menu to view the stats of your character.");
                 }
 
                 else if (input == 2)
@@ -34,8 +34,8 @@ namespace Role_Play.Main
                     while (stayHere == true)
                     {
                         Console.WriteLine("\nBelow is a list of the characters that are saved to the system.");
-                        Class1.Character.Load();
-                        int confirm = Class1.ValidateInt("\nWould you like to see any other characters? (Enter 1 to view other characters, 2 to exit to the main menu)", 1, 2);
+                        Logic.Character.Load();
+                        int confirm = Logic.ValidateInt("\nWould you like to see any other characters? (Enter 1 to view other characters, 2 to exit to the main menu)", 1, 2);
                         if (confirm == 1)
                         {
                             stayHere = true;
@@ -53,8 +53,8 @@ namespace Role_Play.Main
                     while (keepRolling == true)
                     {
                         Console.WriteLine("\nHere you will be asked how many dice of various side-values you would like to roll. When prompted, just input the amount of each respective die-type and the program will tell you what your total is!");
-                        new Class1.Dice.RollAll();
-                        var confirmRoll = Class1.ValidateInt("\nWould you like to keep rolling? Input 1 to continue, 2 to exit.", 1, 2);
+                        new Logic.Dice.RollAll();
+                        var confirmRoll = Logic.ValidateInt("\nWould you like to keep rolling? Input 1 to continue, 2 to exit.", 1, 2);
                         if (confirmRoll == 1)
                         {
                             keepRolling = true;
