@@ -14,7 +14,7 @@ namespace Role_Play.Main
             while (runProgram == true)
             {
                 Console.WriteLine("\nWelcome to the Role-Playing Assistant! With this program you can create a character, save them to the program, and load them for later use! You can also use this program to roll dice!");
-                Console.WriteLine("Enter the following based on what you want to do:");
+                Console.WriteLine("Enter the following based on what you want to do:\n");
                 Console.WriteLine("Enter '1' to create a character.");
                 Console.WriteLine("Enter '2' to view and load the stats of your saved characters.");
                 Console.WriteLine("Enter '3' to simulate rolling dice.");
@@ -23,6 +23,7 @@ namespace Role_Play.Main
 
                 if (input == 1)
                 {
+                    Console.Clear();
                     Console.WriteLine("\nType your response to each question below, make sure you input your answer correctly before submitting.");
                     new Logic.Character();
                     Console.WriteLine("Done! Feel free to select the loading option from the main menu to view the stats of your character.");
@@ -33,7 +34,8 @@ namespace Role_Play.Main
                     bool stayHere = true;
                     while (stayHere == true)
                     {
-                        Console.WriteLine("\nBelow is a list of the characters that are saved to the system.");
+                        Console.Clear();
+                        Console.WriteLine("\nBelow is a list of the characters that are saved to the system. Enter the number attached to the character whose stats you want to view.\n");
                         Logic.Character.Load();
                         int confirm = Logic.ValidateInt("\nWould you like to see any other characters? (Enter 1 to view other characters, 2 to exit to the main menu)", 1, 2);
                         if (confirm == 1)
@@ -52,6 +54,7 @@ namespace Role_Play.Main
                     bool keepRolling = true;
                     while (keepRolling == true)
                     {
+                        Console.Clear();
                         Console.WriteLine("\nHere you will be asked how many dice of various side-values you would like to roll. When prompted, just input the amount of each respective die-type and the program will tell you what your total is!");
                         new Logic.Dice.RollAll();
                         var confirmRoll = Logic.ValidateInt("\nWould you like to keep rolling? Input 1 to continue, 2 to exit.", 1, 2);

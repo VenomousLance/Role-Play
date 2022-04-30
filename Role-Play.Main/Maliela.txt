@@ -1,0 +1,22 @@
+Your name: Me
+Your character's name: Maliela
+Race: Me
+Background: Monk
+Alignment: Orderly Good
+Strength modifier: 5
+Dexterity modifier: 6
+Constitution modifier: 7
+Intelligence modifier: 5
+Wisdom modifier: 6
+Charisma modifier: 7
+Proficiency bonus: 5
+Saving throw (strength): 6
+Saving throw (dexterity): 7
+Saving throw (constitution): 5
+Saving throw (intelligence): 6
+Saving throw (wisdom): 7
+Saving throw (charisma): 5
+Armor class: 6
+Initiative: 7
+Speed: 5
+Max HP: 6
