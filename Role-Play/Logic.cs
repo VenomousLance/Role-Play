@@ -68,68 +68,91 @@ namespace Role_Play
             public Character()
             {
                 ArrayList characterStats = new ArrayList();
+                System.ConsoleColor blue = ConsoleColor.Blue;
                 //Player Name
+                Console.ForegroundColor = blue;
                 string playerName = AnyInput("What is your name? (This is not your character's name)");
+                Console.ResetColor();
                 characterStats.Add($"Your name: {playerName}");
                 //Character Name
                 string characterName = AnyInput("What is your character's name?");
                 characterStats.Add($"Your character's name: {characterName}");
                 //Race
+                Console.ForegroundColor = blue;
                 string race = AnyInput("What race is your character?");
+                Console.ResetColor();
                 characterStats.Add($"Race: {playerName}");
                 //Background
                 string background = AnyInput("What is your character's background?");
                 characterStats.Add($"Background: {background}");
                 //Alignment
+                Console.ForegroundColor = blue;
                 string alignment = AnyInput("What is your character's alignment?");
+                Console.ResetColor();
                 characterStats.Add($"Alignment: {alignment}");
                 //Strength
                 int strength = ValidateInt("What is your strength modifier?", int.MinValue, int.MaxValue);
                 characterStats.Add($"Strength modifier: {strength}");
                 //Dexterity
+                Console.ForegroundColor = blue;
                 int dexterity = ValidateInt("What is your dexterity modifier?", int.MinValue, int.MaxValue);
+                Console.ResetColor();
                 characterStats.Add($"Dexterity modifier: {dexterity}");
                 //Constitution
                 int constitution = ValidateInt("What is your constitution modifier?", int.MinValue, int.MaxValue);
                 characterStats.Add($"Constitution modifier: {constitution}");
                 //Intelligence
+                Console.ForegroundColor = blue;
                 int intelligence = ValidateInt("What is your intelligence modifier?", int.MinValue, int.MaxValue);
+                Console.ResetColor();
                 characterStats.Add($"Intelligence modifier: {intelligence}");
                 //Wisdom
                 int wisdom = ValidateInt("What is your wisdom modifier?", int.MinValue, int.MaxValue);
                 characterStats.Add($"Wisdom modifier: {wisdom}");
                 //Charisma
+                Console.ForegroundColor = blue;
                 int charisma = ValidateInt("What is your charisma modifier?", int.MinValue, int.MaxValue);
+                Console.ResetColor();
                 characterStats.Add($"Charisma modifier: {charisma}");
                 //Proficiency Bonus
                 int proficiency = ValidateInt("What is your proficiency bonus?", int.MinValue, int.MaxValue);
                 characterStats.Add($"Proficiency bonus: {proficiency}");
                 //STStrength
+                Console.ForegroundColor = blue;
                 int savingThrowStr = ValidateInt("What is the value for your saving throw in strength?", int.MinValue, int.MaxValue);
+                Console.ResetColor();
                 characterStats.Add($"Saving throw (strength): {savingThrowStr}");
                 //STDex
                 int savingThrowDex = ValidateInt("What is the value for your saving throw in dexterity?", int.MinValue, int.MaxValue);
                 characterStats.Add($"Saving throw (dexterity): {savingThrowDex}");
                 //STConst
+                Console.ForegroundColor = blue;
                 int savingThrowConst = ValidateInt("What is the value for your saving throw in constitution?", int.MinValue, int.MaxValue);
+                Console.ResetColor();
                 characterStats.Add($"Saving throw (constitution): {savingThrowConst}");
                 //STInt
                 int savingThrowIntel = ValidateInt("What is the value for your saving throw in intelligence?", int.MinValue, int.MaxValue);
                 characterStats.Add($"Saving throw (intelligence): {savingThrowIntel}");
                 //STWis
+                Console.ForegroundColor = blue;
                 int savingThrowWis = ValidateInt("What is the value for your saving throw in wisdom?", int.MinValue, int.MaxValue);
+                Console.ResetColor();
                 characterStats.Add($"Saving throw (wisdom): {savingThrowWis}");
                 //STChar
                 int savingThrowCharm = ValidateInt("What is the value for your saving throw in charisma?", int.MinValue, int.MaxValue);
                 characterStats.Add($"Saving throw (charisma): {savingThrowCharm}");
                 //Armor Class
+                Console.ForegroundColor = blue;
                 int armorClass = ValidateInt("What is your armor class value?", int.MinValue, int.MaxValue);
+                Console.ResetColor();
                 characterStats.Add($"Armor class: {armorClass}");
                 //Initiative
                 int initiative = ValidateInt("What is your initiative?", int.MinValue, int.MaxValue);
                 characterStats.Add($"Initiative: {initiative}");
                 //Speed
+                Console.ForegroundColor = blue;
                 int speed = ValidateInt("What is your speed value?", int.MinValue, int.MaxValue);
+                Console.ResetColor();
                 characterStats.Add($"Speed: {speed}");
                 //Max Hit Points
                 int maxHP = ValidateInt("What is the maximum value of your hit points?", int.MinValue, int.MaxValue);
@@ -223,7 +246,6 @@ namespace Role_Play
         {
             public interface IDice
             {
-                public List<int> Sides { get; set; }
                 public int diceValues();
                 public int numDice { get; set; }
             }
@@ -239,24 +261,19 @@ namespace Role_Play
                     D12Set allD12 = new D12Set();
                     D20Set allD20 = new D20Set();
                     sumTotal = allD4.Total + allD6.Total + allD8.Total + allD12.Total + allD20.Total;
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine($"The total of all the dice is {sumTotal}");
-
+                    Console.ResetColor();
                 }
             }
 
             public class D4Set : IDice
             {
-                public List<int> Sides { get; set; }
                 public int numDice { get; set; }
                 public int Total { get; set; }
 
                 public D4Set()
                 {
-                    Sides = new List<int>();
-                    Sides.Add(1);
-                    Sides.Add(2);
-                    Sides.Add(3);
-                    Sides.Add(4);
                     numDice = ValidateInt("\nHow many d4 would you like to roll?", 0, 1000);
                     Total = diceValues();
                 }
@@ -266,32 +283,26 @@ namespace Role_Play
                     var random = new Random();
                     while (numDice > 0)
                     {
-                        int roll = random.Next(Sides.Count);
-                        int rollValue = Sides[roll];
+                        int roll = random.Next(4);
+                        int rollValue = roll + 1;
                         Console.WriteLine($"You rolled a {rollValue}");
                         Total += rollValue;
                         numDice--;
                     }
+                    Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine($"This total is {Total}");
+                    Console.ResetColor();
                     return Total;
                 }
             }
 
             public class D6Set : IDice
             {
-                public List<int> Sides { get; set; }
                 public int numDice { get; set; }
                 public int Total { get; set; }
 
                 public D6Set()
                 {
-                    Sides = new List<int>();
-                    Sides.Add(1);
-                    Sides.Add(2);
-                    Sides.Add(3);
-                    Sides.Add(4);
-                    Sides.Add(5);
-                    Sides.Add(6);
                     numDice = ValidateInt("\nHow many d6 would you like to roll?", 0, 1000);
                     Total = diceValues();
                 }
@@ -301,34 +312,26 @@ namespace Role_Play
                     var random = new Random();
                     while (numDice > 0)
                     {
-                        int roll = random.Next(Sides.Count);
-                        int rollValue = Sides[roll];
+                        int roll = random.Next(6);
+                        int rollValue = roll + 1;
                         Console.WriteLine($"You rolled a {rollValue}");
                         Total += rollValue;
                         numDice--;
                     }
+                    Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine($"This total is {Total}");
+                    Console.ResetColor();
                     return Total;
                 }
             }
 
             public class D8Set : IDice
             {
-                public List<int> Sides { get; set; }
                 public int numDice { get; set; }
                 public int Total { get; set; }
 
                 public D8Set()
                 {
-                    Sides = new List<int>();
-                    Sides.Add(1);
-                    Sides.Add(2);
-                    Sides.Add(3);
-                    Sides.Add(4);
-                    Sides.Add(5);
-                    Sides.Add(6);
-                    Sides.Add(7);
-                    Sides.Add(8);
                     numDice = ValidateInt("\nHow many d8 would you like to roll?", 0, 1000);
                     Total = diceValues();
                 }
@@ -338,38 +341,26 @@ namespace Role_Play
                     var random = new Random();
                     while (numDice > 0)
                     {
-                        int roll = random.Next(Sides.Count);
-                        int rollValue = Sides[roll];
+                        int roll = random.Next(8);
+                        int rollValue = roll + 1;
                         Console.WriteLine($"You rolled a {rollValue}");
                         Total += rollValue;
                         numDice--;
                     }
+                    Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine($"This total is {Total}");
+                    Console.ResetColor();
                     return Total;
                 }
             }
 
             public class D12Set : IDice
             {
-                public List<int> Sides { get; set; }
                 public int numDice { get; set; }
                 public int Total { get; set; }
 
                 public D12Set()
                 {
-                    Sides = new List<int>();
-                    Sides.Add(1);
-                    Sides.Add(2);
-                    Sides.Add(3);
-                    Sides.Add(4);
-                    Sides.Add(5);
-                    Sides.Add(6);
-                    Sides.Add(7);
-                    Sides.Add(8);
-                    Sides.Add(9);
-                    Sides.Add(10);
-                    Sides.Add(11);
-                    Sides.Add(12);
                     numDice = ValidateInt("\nHow many d12 would you like to roll?", 0, 1000);
                     Total = diceValues();
                 }
@@ -379,46 +370,26 @@ namespace Role_Play
                     var random = new Random();
                     while (numDice > 0)
                     {
-                        int roll = random.Next(Sides.Count);
-                        int rollValue = Sides[roll];
+                        int roll = random.Next(12);
+                        int rollValue = roll + 1;
                         Console.WriteLine($"You rolled a {rollValue}");
                         Total += rollValue;
                         numDice--;
                     }
+                    Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine($"This total is {Total}");
+                    Console.ResetColor();
                     return Total;
                 }
             }
 
             public class D20Set : IDice
             {
-                public List<int> Sides { get; set; }
                 public int numDice { get; set; }
                 public int Total { get; set; }
 
                 public D20Set()
                 {
-                    Sides = new List<int>();
-                    Sides.Add(1);
-                    Sides.Add(2);
-                    Sides.Add(3);
-                    Sides.Add(4);
-                    Sides.Add(5);
-                    Sides.Add(6);
-                    Sides.Add(7);
-                    Sides.Add(8);
-                    Sides.Add(9);
-                    Sides.Add(10);
-                    Sides.Add(11);
-                    Sides.Add(12);
-                    Sides.Add(13);
-                    Sides.Add(14);
-                    Sides.Add(15);
-                    Sides.Add(16);
-                    Sides.Add(17);
-                    Sides.Add(18);
-                    Sides.Add(19);
-                    Sides.Add(20);
                     numDice = ValidateInt("\nHow many d20 would you like to roll?", 0, 1000);
                     Total = diceValues();
                 }
@@ -428,13 +399,15 @@ namespace Role_Play
                     var random = new Random();
                     while (numDice > 0)
                     {
-                        int roll = random.Next(Sides.Count);
-                        int rollValue = Sides[roll];
+                        int roll = random.Next(20);
+                        int rollValue = roll + 1;
                         Console.WriteLine($"You rolled a {rollValue}");
                         Total += rollValue;
                         numDice--;
                     }
+                    Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine($"This total is {Total}");
+                    Console.ResetColor();
                     return Total;
                 }
             }
